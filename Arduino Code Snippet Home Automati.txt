@@ -1,0 +1,34 @@
+// Arduino Code Snippet: Home Automation via Bluetooth
+
+#include <Arduino.h>
+
+char command;
+int led1 = 2; // LED representing an appliance
+int led2 = 3;
+
+void setup() {
+  Serial.begin(9600); // Bluetooth communication
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+}
+
+void loop() {
+  if(Serial.available()) {
+    command = Serial.read();
+
+    switch(command) {
+      case 'A': // Turn LED1 ON
+        digitalWrite(led1, HIGH);
+        break;
+      case 'B': // Turn LED1 OFF
+        digitalWrite(led1, LOW);
+        break;
+      case 'C': // Turn LED2 ON
+        digitalWrite(led2, HIGH);
+        break;
+      case 'D': // Turn LED2 OFF
+        digitalWrite(led2, LOW);
+        break;
+    }
+  }
+}
