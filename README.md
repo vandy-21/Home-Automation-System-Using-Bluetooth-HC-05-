@@ -22,5 +22,3 @@ To control home appliances remotely using a smartphone via Bluetooth communicati
 2. HC-05 Bluetooth module receives commands from the smartphone app.
 3. Arduino executes commands to turn devices ON or OFF.
 
-## Diagram / Screenshots
-(Upload images of wiring and setup here)
